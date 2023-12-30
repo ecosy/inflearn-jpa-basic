@@ -21,9 +21,8 @@ public class JpaBasic01Application {
 
         try {
             Member member = new Member();
-            member.setId(1L);
+//            member.setId("ID_A");
             member.setUsername("AA");
-            member.setRoleType(RoleType.USER);
 
             em.persist(member);
 
