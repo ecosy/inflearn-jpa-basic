@@ -21,11 +21,15 @@ public class JpaBasic01Application {
         tx.begin();
 
         try {
-            Member member = new Member();
-            member.setId(1L);
-            member.setName("name");
+            // 비영속
+            Member member1 = new Member(3L, "A");
+            Member member2 = new Member(4L, "5");
 
-            em.persist(member);
+            // 영속
+            System.out.println("=== Before ===");
+            em.persist(member1);
+            em.persist(member2);
+            System.out.println("=== After ===");
 
             tx.commit();
         } catch (Exception e) {
