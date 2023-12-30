@@ -20,9 +20,12 @@ public class JpaBasic01Application {
         tx.begin();
 
         try {
-            // 영속
-            Member member = em.find(Member.class, 3L);
-            member.setName("C");
+            Member member = new Member();
+            member.setId(1L);
+            member.setUsername("AA");
+            member.setRoleType(RoleType.USER);
+
+            em.persist(member);
 
             tx.commit();
         } catch (Exception e) {
@@ -30,7 +33,6 @@ public class JpaBasic01Application {
         } finally {
             em.close();
         }
-
         emf.close();
     }
 }
