@@ -1,6 +1,5 @@
 package inflearn.jpabasic.jpabasic01;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.persistence.EntityManager;
