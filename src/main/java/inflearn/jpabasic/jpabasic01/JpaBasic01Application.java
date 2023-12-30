@@ -21,15 +21,9 @@ public class JpaBasic01Application {
         tx.begin();
 
         try {
-            // 비영속
-            Member member1 = new Member(3L, "A");
-            Member member2 = new Member(4L, "5");
-
             // 영속
-            System.out.println("=== Before ===");
-            em.persist(member1);
-            em.persist(member2);
-            System.out.println("=== After ===");
+            Member member = em.find(Member.class, 3L);
+            member.setName("C");
 
             tx.commit();
         } catch (Exception e) {
